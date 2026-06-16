@@ -62,9 +62,10 @@ function App() {
             placeholder="چه کاری باید انجام شود؟"
             className="flex-1 p-4 rounded-2xl bg-slate-100 outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button onClick={addTask} className="bg-blue-600 text-white px-6 rounded-2xl font-bold hover:bg-blue-700 transition flex items-center gap-2">
-            <Plus size={20} /> افزودن
-          </button>
+          <div style={{ display: 'flex', gap: '8px', width: '100%', alignItems: 'center' }}>
+            <input type="text" style={{ flex: '1', padding: '10px' }} />
+            <button style={{ flexShrink: '0', padding: '10px' }}>افزودن</button>
+          </div>
         </div>
 
         {/* فیلترها */}
