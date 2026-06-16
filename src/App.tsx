@@ -53,17 +53,17 @@ function App() {
           </div>
         </div>
         {/* بخش افزودن کار */}
-        <div className="flex gap-2 mb-8">
+        <div className="flex gap-2 mb-8 w-full max-w-full overflow-hidden">
           <input
             value={task}
             onChange={(e) => setTask(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && addTask()}
             placeholder="چه کاری باید انجام شود؟"
-            className="flex-1 p-4 rounded-2xl bg-slate-100 outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 min-w-0 p-4 rounded-2xl bg-slate-100 outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
             onClick={addTask}
-            className="bg-blue-600 text-white px-6 py-4 rounded-2xl font-bold whitespace-nowrap hover:bg-blue-700 transition"
+            className="bg-blue-600 text-white px-4 py-4 rounded-2xl font-bold flex-shrink-0 hover:bg-blue-700 transition"
           >
             افزودن
           </button>
