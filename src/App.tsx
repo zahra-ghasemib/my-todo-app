@@ -52,7 +52,6 @@ function App() {
             <button onClick={() => { if (newCat) { setCategories([...categories, newCat]); setNewCat('') } }} className="bg-slate-800 text-white px-4 rounded-2xl font-bold transition hover:bg-slate-900">+</button>
           </div>
         </div>
-
         {/* بخش افزودن کار */}
         <div className="flex gap-2 mb-8">
           <input
@@ -62,19 +61,12 @@ function App() {
             placeholder="چه کاری باید انجام شود؟"
             className="flex-1 p-4 rounded-2xl bg-slate-100 outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <div style={{ display: 'flex', gap: '8px', width: '100%', alignItems: 'center' }}>
-            <input type="text" style={{ flex: '1', padding: '10px' }} />
-            <button style={{ flexShrink: '0', padding: '10px' }}>افزودن</button>
-          </div>
-        </div>
-
-        {/* فیلترها */}
-        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-          {['همه', ...categories].map(c => (
-            <button key={c} onClick={() => setFilter(c)} className={`px-4 py-2 rounded-full text-sm font-medium transition ${filter === c ? 'bg-blue-600 text-white shadow-lg' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}`}>
-              {c}
-            </button>
-          ))}
+          <button
+            onClick={addTask}
+            className="bg-blue-600 text-white px-6 py-4 rounded-2xl font-bold whitespace-nowrap hover:bg-blue-700 transition"
+          >
+            افزودن
+          </button>
         </div>
 
         {/* لیست کارها */}
