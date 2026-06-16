@@ -68,7 +68,18 @@ function App() {
             افزودن
           </button>
         </div>
-
+        {/* فیلترها */}
+        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+          {['همه', ...categories].map(c => (
+            <button
+              key={c}
+              onClick={() => setFilter(c)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition ${filter === c ? 'bg-blue-600 text-white shadow-lg' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
         {/* لیست کارها */}
         <ul className="space-y-3">
           {list.filter(t => filter === 'همه' || t.category === filter).map((todo) => (
