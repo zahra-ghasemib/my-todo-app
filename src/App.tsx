@@ -1,5 +1,5 @@
 ﻿import { useState, useEffect } from 'react'
-import { Trash2, Plus, CheckCircle, Circle, Tag } from 'lucide-react'
+import { Trash2, CheckCircle, Circle, Tag } from 'lucide-react'
 
 type Todo = { id: number; text: string; category: string; isDone: boolean; isDeleting?: boolean };
 
@@ -52,18 +52,18 @@ function App() {
             <button onClick={() => { if (newCat) { setCategories([...categories, newCat]); setNewCat('') } }} className="bg-slate-800 text-white px-4 rounded-2xl font-bold transition hover:bg-slate-900">+</button>
           </div>
         </div>
-        {/* بخش افزودن کار */}
-        <div className="flex gap-2 mb-8 w-full max-w-full overflow-hidden">
+        {/* بخش افزودن کار - اصلاح شده */}
+        <div className="flex flex-col sm:flex-row gap-2 mb-8 w-full">
           <input
             value={task}
             onChange={(e) => setTask(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && addTask()}
             placeholder="چه کاری باید انجام شود؟"
-            className="flex-1 min-w-0 p-4 rounded-2xl bg-slate-100 outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 w-full p-4 rounded-2xl bg-slate-100 outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
             onClick={addTask}
-            className="bg-blue-600 text-white px-4 py-4 rounded-2xl font-bold flex-shrink-0 hover:bg-blue-700 transition"
+            className="bg-blue-600 text-white w-full sm:w-auto px-6 py-4 rounded-2xl font-bold hover:bg-blue-700 transition"
           >
             افزودن
           </button>
